@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concesionario>
+  <coche>
+    <marca>Fiat</marca>
+    <modelo>Tipo 5 Puertas</modelo>
+    <precio>9.800€</precio>
+    <foto src="/img/fiat_tipo_5p.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>Volkswagen</marca>
+    <modelo>Polo</modelo>
+    <precio>17.035 €</precio>
+    <foto src="/img/volkswagen-polo.jpg"></foto>
+
+  </coche>
+  <coche>
+    <marca>Opel</marca>
+    <modelo>Astra Turbo</modelo>
+    <precio>13.990€</precio>
+    <foto src="/img/opel_astra.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>BMW</marca>
+    <modelo>X1</modelo>
+    <precio>31.900€</precio>
+    <foto src="/img/bmw_x1.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>BMW</marca>
+    <modelo>Serie 1</modelo>
+    <precio>25.750€</precio>
+    <foto src="/img/bmw_serie1.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>Opel</marca>
+    <modelo>Corsa</modelo>
+    <precio>9.900€</precio>
+    <foto src="/img/opel_corsa.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>Fiat</marca>
+    <modelo>124 Spider</modelo>
+    <precio>9.900€</precio>
+    <foto src="/img/fiat_spider.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>Fiat</marca>
+    <modelo>124 Spider</modelo>
+    <precio>22.304€</precio>
+    <foto src="/img/fiat-500-mirror-gama-9.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>Opel</marca>
+    <modelo>Crossland X</modelo>
+    <precio>13.900€</precio>
+    <foto src="/img/opel_crosslandx.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>BMW</marca>
+    <modelo>X4</modelo>
+    <precio>55.815€</precio>
+    <foto src="/img/bmw_x4.jpg"></foto>
+  </coche>
+  <coche>
+    <marca>Volkswagen</marca>
+    <modelo>T-Roc</modelo>
+    <precio>19.600€</precio>
+    <foto src="/img/volkswagen-t-roc-2017.jpg"></foto>
+  </coche>
+
+
+
+</concesionario>

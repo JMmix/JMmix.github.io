@@ -1,0 +1,34 @@
+.slider {
+	float: left;
+	width:650px;
+	margin: auto;
+	overflow: hidden;
+	height: 364px;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	animation: cambio 15s infinite  alternate linear;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider img {
+border-radius: 120px;
+width:650px;
+height: 364px;
+
+}
+
+@keyframes cambio {
+		0%   {margin-left:  0;}
+    33%  {margin-left: -133%;}
+    66%  {margin-left: -270%;}
+    100%  {margin-left: -270%;}
+
+}

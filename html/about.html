@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  <title>Proyecto Marcas</title>
+  <link rel="icon" href="../img/favicon.ico">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/slideshow_b.css">
+</head>
+
+<body>
+  <nav>
+        <a  href="../index.html"><span ><i class="fa fa-home"></i></span></a>
+        <a href="about.html" class="activebar"><span class="activebar">Sobre nosotros</span></a>
+        <div class="dropdown">
+          <button class="dropbtn"><span>Modelos</span></button>
+          <div class="dropdown-content">
+            <a  href="fiat.html">Fiat</a>
+            <a href="volkswagen.html">Volkswagen</a>
+          <a href="bmw.html">BMW</a>
+            <a href="opel.html">Opel</a>
+          </div>
+        </div>
+          <a href="contact.html"><span>Contacto</span></a>
+      <div class="search-container">
+            <form action="https://google.com/search" method="get">
+              <input type="text" name="q" placeholder="Buscar.." name="search"/>
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+    </nav>
+    <section style="margin-top:75px;">
+      <p style="width:50%; margin-left: 45%;">Concesionario de alto estándar Todo Coches localizado en la Calle Romero en Majadahonda.
+        Mejor concesionario multimarca del área oeste de Madrid. <br>
+Disponemos de muchas marcas prestigiosas como BMW, Volkswagen.
+Tenemos los mejores modelos no pierdas más tiempo y visítanos.
+
+    </p>
+    <section class="slider">
+      <ul>
+        <li>
+          <img src="../img/concesionario-autos.jpg" alt="">
+        </li>
+        <li>
+          <img src="../img/concesionario.jpg" alt="">
+        </li>
+        <li>
+          <img src="../img/concesionario2.jpg" alt="">
+        </li>
+      </ul>
+
+    </section>
+
+  </section>
+  <h2>Localizacion</h2>
+
+
+  <div id="map" style="width:40%;height:400px; float:left;"></div>
+
+
+  <script>
+    function gMap() {
+      var centro = new google.maps.LatLng(40.476823, -3.857634);
+      var mapCanvas = document.getElementById("map");
+      var mapOptions = {
+        center: centro,
+        zoom: 19
+      };
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+      var marker = new google.maps.Marker({
+        position: centro
+      });
+      marker.setMap(map);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfBAT5eycyKKoXxJjTz1IJUxNL6wEGvPs&callback=gMap"></script>
+    <footer style="position: absolute; bottom: 0;">
+  <div class="footerg">
+     <h5>MODELOS</h5>
+     <ul>
+        <li>   <a href="html/fiat.html">Fiat</a></li>
+        <li>   <a href="html/volkswagen.html">Volkswagen</a></li>
+        <li>   <a href="html/bmw.html">BMW</a></li>
+        <li>   <a href="html/opel.html">Opel</a></li>
+     </ul>
+  </div>
+  <div class="footerg">
+     <h5>ENLACES DE INTERÉS</h5>
+     <ul>
+        <li>  <a href="html/contact.html"><span>Contacto</span></a></li>
+        <li><a href="html/about.html"><span>Sobre nosotros</span></a></li>
+     </ul>
+  </div>
+  <div class="footerg">
+     <h5>SOCIAL MEDIA</h5>
+     <ul>
+        <li><a class="social" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></li>
+        <li><a class="social" href="https://es-es.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+     </ul>
+  </div>
+</footer>
+</body>
+
+</html>

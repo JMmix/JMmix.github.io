@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+
+  <title>Proyecto Marcas</title>
+  <link rel="icon" href="../img/favicon.ico">
+  <link rel="stylesheet" href="../css/modelos.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script src="../js/jquery-3.3.1.min.js"></script>
+<style>
+header {
+  background-image: url(../img/fiat-500.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin-top: 46px;
+      padding-top: 9em;
+      padding-bottom: 15em;
+      background-position: 10% 28%;
+}
+header h2{
+  text-align: center;
+  position: relative;
+  top:4px;
+  text-shadow: 0 1px 2px #101820;
+  color:white;
+}
+</style>
+</head>
+
+<body onload="displayResult()">
+  <nav>
+        <a  href="../index.html"><span ><i class="fa fa-home"></i></span></a>
+        <a href="about.html" ><span >Sobre nosotros</span></a>
+        <div class="dropdown activebar">
+          <button  class="dropbtn activebar"><span class="activebar">Modelos</span></button>
+          <div class="dropdown-content">
+            <a  href="fiat.html">Fiat</a>
+            <a href="volkswagen.html">Volkswagen</a>
+          <a href="bmw.html">BMW</a>
+            <a href="opel.html">Opel</a>
+          </div>
+        </div>
+          <a href="contact.html"><span>Contacto</span></a>
+      <div class="search-container">
+            <form action="https://google.com/search" method="get">
+              <input type="text" name="q" placeholder="Buscar.." name="search"/>
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+    </nav>
+  <header>
+<h2>Disfruta con nuestras ofertas desde 9800€</h2>
+  </header>
+    <div id="example"></div>
+    <footer>
+       <div class="footerg">
+          <h5>MODELOS</h5>
+          <ul>
+             <li>   <a href="html/fiat.html">Fiat</a></li>
+             <li>   <a href="html/volkswagen.html">Volkswagen</a></li>
+             <li>   <a href="html/bmw.html">BMW</a></li>
+             <li>   <a href="html/opel.html">Opel</a></li>
+          </ul>
+       </div>
+       <div class="footerg">
+          <h5>ENLACES DE INTERÉS</h5>
+          <ul>
+             <li>  <a href="html/contact.html"><span>Contacto</span></a></li>
+             <li><a href="html/about.html"><span>Sobre nosotros</span></a></li>
+          </ul>
+       </div>
+       <div class="footerg">
+          <h5>SOCIAL MEDIA</h5>
+          <ul>
+             <li><a class="social" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a></li>
+             <li><a class="social" href="https://es-es.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+          </ul>
+       </div>
+    </footer>
+  <script>
+    /*XSL*/
+    function loadXMLDoc(filename) {
+      if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+      } else {
+        xhttp = new XMLHttpRequest();
+      }
+      xhttp.open("GET", filename, false);
+      try {
+        xhttp.responseType = "msxml-document"
+      } catch (err) {} // Helping IE11
+      xhttp.send("");
+      return xhttp.responseXML;
+    }
+
+    function displayResult() {
+      xml = loadXMLDoc("../xml/coches.xml");
+      xsl = loadXMLDoc("../xml/fiat.xsl");
+      // code for IE
+      if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
+        ex = xml.transformNode(xsl);
+        document.getElementById("example").innerHTML = ex;
+      }
+      // code for Chrome, Firefox, Opera, etc.
+      else if (document.implementation && document.implementation.createDocument) {
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xsl);
+        resultDocument = xsltProcessor.transformToFragment(xml, document);
+        document.getElementById("example").appendChild(resultDocument);
+      }
+    }
+  </script>
+
+</body>
+</html>
