@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/slideshow_b.css">
+</head>
+
+<body>
+  <nav>
+        <a  href="../index.html"><span ><i class="fa fa-home"></i></span></a>
+        <a href="about.html" class="activebar"><span class="activebar">Sobre nosotros</span></a>
+        <div class="dropdown">
+          <button class="dropbtn"><span>Modelos</span></button>
+          <div class="dropdown-content">
+            <a  href="fiat.html">Fiat</a>
+            <a href="volkswagen.html">Volkswagen</a>
+          <a href="bmw.html">BMW</a>
+            <a href="opel.html">Opel</a>
+          </div>
+        </div>
+          <a href="#"><span>Promociones</span></a>
+          <a href="contact.html"><span>Contacto</span></a>
+      <div class="search-container">
+            <form action="https://google.com/search" method="get">
+              <input type="text" name="q" placeholder="Buscar.." name="search"/>
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+    </nav>
+    <section style="margin-top:75px;">
+      <p style="width:50%; margin-left: 45%;">Concesionario de alto estandar Todo Coches localizado en la Calle Romero en Majadahonda.
+      Mejor concesionario multimarca del area oeste de Madrid.<br>
+      Disponemos de muchas marcas prestigiosas como BMW, Volkswagen. Tenemos los mejores modelos no pierdas más tiempo y visitanos.
+    </p>
+    <section class="slider">
+      <ul>
+        <li>
+          <img src="../img/concesionario-autos.jpg" alt="">
+        </li>
+        <li>
+          <img src="../img/concesionario.jpg" alt="">
+        </li>
+        <li>
+          <img src="../img/concesionario2.jpg" alt="">
+        </li>
+      </ul>
+
+    </section>
+
+  </section>
+  <h2>Localizacion</h2>
+
+
+  <div id="map" style="width:40%;height:400px; float:left;"></div>
+
+  <script>
+    function myMap() {
+      var myCenter = new google.maps.LatLng(40.476823, -3.857634);
+      var mapCanvas = document.getElementById("map");
+      var mapOptions = {
+        center: myCenter,
+        zoom: 19
+      };
+      var map = new google.maps.Map(mapCanvas, mapOptions);
+      var marker = new google.maps.Marker({
+        position: myCenter
+      });
+      marker.setMap(map);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfBAT5eycyKKoXxJjTz1IJUxNL6wEGvPs&callback=myMap"></script>
+
+</body>
+
+</html>

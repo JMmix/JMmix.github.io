@@ -1,0 +1,154 @@
+ /*NAV*/
+
+body{
+  margin: 0 auto;
+  width: 100%;
+  font-family: sans-serif;
+
+}
+
+nav {
+
+  background-color: #333;
+  font-family: Arial;
+  z-index: 2;
+  overflow: visible;
+  width: 100%;
+  position: fixed;
+  top:0;
+}
+.activebar   {
+  background-color: white;
+  color: black;
+}
+.activebar span{
+  border-bottom: 5px solid black;
+  transition: 1s ease 0s;
+}
+
+div.dropdown:hover span{
+  border-bottom: 5px solid black;
+  transition: 1s ease 0s;
+}
+
+
+nav a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+nav a:hover span{
+   border-bottom: 5px solid black;
+   transition: 1s ease 0s;
+}
+
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+
+}
+
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+
+nav a:hover, .dropdown:hover .dropbtn {
+  background-color: white;
+  color: black;
+}
+
+
+.dropdown-content {
+  visibility: hidden;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+
+.dropdown:hover .dropdown-content {
+   visibility: visible;
+}
+nav .search-container{
+  float: right;
+}
+
+nav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+
+}
+
+nav .search-container button {
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+nav .search-container button:hover {
+  background: #ccc;
+}
+
+nav .topnav input[type=text], .topnav .search-container button {
+  float: none;
+  display: block;
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  padding: 14px;
+}
+
+
+
+nav input[type=text] {
+  border: 1px solid #ccc;
+}
+
+ div#docxml:hover  .line span   {
+   border-bottom: 5px solid black;
+   transition: 1s ease 0s;
+}
+ .line {
+  margin-left: 42%;
+  text-shadow: 0 1px 2px #101820;
+}
+.marc {
+  margin-left: 44%;
+  text-shadow: 0 1px 2px #101820;
+}

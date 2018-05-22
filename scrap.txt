@@ -1,0 +1,24 @@
+function bmw() {
+//Carga el xsl y el xml
+xml = loadXMLDoc("xml/coches.xml");
+xsl = loadXMLDoc("xml/bmw.xsl");
+/*El if comprueba la respuesta que le da el navegador si es IE  usa la
+funcion transformNode() para aplicar el xsl despues lo que contenga el xsl
+lo traspasa a la id docxml*/
+if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
+ ex = xml.transformNode(xsl);
+ document.getElementById("docxml").innerHTML = ex;
+}
+//En los otros navegadores crea un objecto XSLTProcessor e importa el XSL a el
+else if (document.implementation && document.implementation.createDocument) {
+ xsltProcessor = new XSLTProcessor();
+ xsltProcessor.importStylesheet(xsl);
+ //Con la funcion transformToFragment() aplicamos el XSL al XML
+ resultDocument = xsltProcessor.transformToFragment(xml, document);
+ //Y el resultado lo cargamos a la id docxml
+ document.getElementById('docxml').innerHTML = '';
+ document.getElementById("docxml").appendChild(resultDocument);
+}
+}
+<a class="social" href="https://twitter.com/?lang=es"><i class="fab fa-twitter"></i></a>
+<a class="social" href="https://es-es.facebook.com/"><i class="fab fa-facebook"></i></a>

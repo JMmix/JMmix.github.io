@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slideshow.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+
+<body onload="displayResult()">
+  <nav>
+    <a class="activebar" href="index.html"><span class="activebar"><i class="fa fa-home"></i></span></a>
+    <a href="html/about.html"><span>Sobre nosotros</span></a>
+    <div class="dropdown">
+      <button class="dropbtn"><span>Modelos</span></button>
+      <div class="dropdown-content">
+        <a href="html/fiat.html">Fiat</a>
+        <a href="html/volkswagen.html">Volkswagen</a>
+        <a href="html/bmw.html">BMW</a>
+        <a href="html/opel.html">Opel</a>
+      </div>
+    </div>
+    <a href="#"><span>Promociones</span></a>
+    <a href="html/contact.html"><span>Contacto</span></a>
+    <div class="search-container">
+      <form action="https://google.com/search" method="get">
+        <input type="text" name="q" placeholder="Buscar.." name="search" />
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </nav>
+
+
+
+  <section class="slider">
+    <ul>
+      <li>
+        <img src="img/fiat_tipo_5pr.jpg" alt="">
+      </li>
+      <li>
+        <img src="img/opel_corsa.jpg" alt="">
+      </li>
+      <li>
+        <img src="img/opel_astra.jpg" alt="">
+      </li>
+      <li>
+        <img src="img/volkswagen-polo.jpg" alt="">
+      </li>
+    </ul>
+
+  </section>
+  <h2 class="line"><span>Nuestros coches</span></h2>
+  <h3 class="marc">Nuestras marcas</h5>
+  <button id="mybutton" onclick="cambio('xml/fiat.xsl')">Fiat</button>
+    <button  onclick="test('xml/fiat.xsl')">Fiat</button>
+  <div id="docxml">
+
+
+  </div>
+  <footer>
+
+  </footer>
+  <script>
+
+    //XSL
+    function loadXMLDoc(filename) {
+      //crea un XMLHttpRequest o una Msxml2.XMLHTTP si es en IE
+      if (window.ActiveXObject) {
+        xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+      } else {
+        xhttp = new XMLHttpRequest();
+      }
+      //usa el open() y el send() del XMLHttpRequest para enviar una peticion al servidor
+      xhttp.open("GET", filename, false);
+      try {
+        xhttp.responseType = "msxml-document"
+      } catch (err) {} // Helping IE11
+      xhttp.send("");
+      //recibe la respuesta del servidor como datos XML
+      return xhttp.responseXML;
+    }
+
+    function displayResult() {
+      //carga el xsl y el xml y se lo pasa a la funcion loadXMLDoc
+      xml = loadXMLDoc("xml/coches.xml");
+      xsl = loadXMLDoc("xml/coches.xsl");
+      /*el if comprueba la respuesta que le da el navegador si es IE  usa la
+       funcion transformNode() para aplicar el xsl despues lo que contenga el xsl
+       lo traspasa a la id docxml*/
+      if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
+        ex = xml.transformNode(xsl);
+        document.getElementById("docxml").innerHTML = ex;
+      }
+      //en los otros navegadores crea un objecto XSLTProcessor e importa el XSL a el
+      else if (document.implementation && document.implementation.createDocument) {
+        xsltProcessor = new XSLTProcessor();
+        xsltProcessor.importStylesheet(xsl);
+        //con la funcion transformToFragment() aplicamos el XSL al XML
+        resultDocument = xsltProcessor.transformToFragment(xml, document);
+        //y el resultado lo cargamos a la id docxml
+        document.getElementById("docxml").appendChild(resultDocument);
+      }
+    }
+  function loadBmw(marca){
+  var busqueda = document.getElementsByClassName('container')[0].getElementsByTagName('h4')[0].innerHTML;
+  if(busqueda==marca) {
+  document.getElementsByClassName('card')[0].style.visibility = "hidden";
+  }
+}
+function cambio(xslc) {
+  //carga el xsl y el xml
+
+  xml = loadXMLDoc("xml/coches.xml");
+  xslc =  loadXMLDoc('\"'+xslc+'\"');
+  /*el if comprueba la respuesta que le da el navegador si es IE  usa la
+   funcion transformNode() para aplicar el xsl despues lo que contenga el xsl
+   lo traspasa a la id docxml*/
+  if (window.ActiveXObject || xhttp.responseType == "msxml-document") {
+    ex = xml.transformNode(xsl);
+    document.getElementById("docxml").innerHTML = ex;
+  }
+  //en los otros navegadores crea un objecto XSLTProcessor e importa el XSL a el
+  else if (document.implementation && document.implementation.createDocument) {
+    xsltProcessor = new XSLTProcessor();
+    xsltProcessor.importStylesheet(xsl);
+    //con la funcion transformToFragment() aplicamos el XSL al XML
+    resultDocument = xsltProcessor.transformToFragment(xml, document);
+    //y el resultado lo cargamos a la id docxml
+    document.getElementById('docxml').innerHTML = '';
+    document.getElementById("docxml").appendChild(resultDocument);
+  }
+}
+function test(p){
+   alert(p)
+}
+
+
+  </script>
+</body>
+
+</html>
