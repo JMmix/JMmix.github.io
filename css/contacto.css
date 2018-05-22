@@ -78,7 +78,7 @@ section {
 
 .call{
   background-color: #e8e4e4;
-    width: fit-content;
+    display: inline-block;
     border: 5px solid black;
     border-radius: 25px;
     margin-left: 31%;
