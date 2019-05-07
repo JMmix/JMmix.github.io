@@ -1,2 +1,2 @@
 # Marcas
-https://jmmix.github.io/
+Rama secundaria para hacer deploys en Jenkins
