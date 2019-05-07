@@ -1,2 +1,2 @@
 # Marcas
-Rama secundaria para hacer deploys en Jenkins
+Rama secundaria para hacer deploys con Jenkins en Kubernetes
